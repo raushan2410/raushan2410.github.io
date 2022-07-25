@@ -1,0 +1,807 @@
+body {
+    margin: 0px;
+    cursor: wait;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+    /* adding background to the header  */
+header {
+    position: relative;
+    height: 75vh;
+    min-height: 480px;
+    width: 100vw;
+    background-color: #008955;
+    background: url('./image/DSC_6196.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* opacity: 0.8; */
+}
+
+#screen {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    z-index: 10;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#start {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    /* border: 2px black solid; */
+    background: url('./image/kukek.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    transition: all 2s linear;
+    animation: rot-start 2.5s 0.5s ease-in alternate;
+}
+@keyframes rot-start {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translate(100vw,-30vh);
+        /* transform: translateY(-50vh); */
+    }
+
+}
+
+    /* dealing with navigation */
+#nav-box {
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home {
+    position: relative;
+    width: 40%;
+    
+}
+#home a {
+    position: relative;
+    left: -25%;
+}
+
+
+#nav {
+    position: relative;
+    right: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#navicon {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    display: none;
+    cursor: pointer;
+}
+#navicon i {
+    font-size: 1.8rem;
+}
+@media (max-width:600px) {
+    #nav-box {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        z-index: 5;
+        /* display: none; */
+        flex-direction: column;
+        justify-content: center;
+        background-color: #008955;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+    }
+    #nav {
+        position: absolute;
+        /* top: 10%; */
+        justify-content: center;
+        background-color: #00a6ff;
+        flex-direction: column;
+        height: 100%;
+        right: 0;
+        /* display: none; */
+    }
+    #nav li {
+        height: 10vh;
+    }
+    #home a {
+        left: 0;
+    }
+    
+    #navicon {
+        z-index: 7;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        transition: all 0.5s ease-in-out;
+    }
+}
+@media (min-width:601px) {
+    #nav-box {
+        display: flex !important;
+    }
+}
+#nav li {
+    display: inline-block;
+    list-style: none;
+    /* outline: 2px blue solid; */
+}
+#nav li a {
+    text-decoration: none;
+    /* color: #A5AEB4; */
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #412728;
+}
+#nav li a:hover {
+    border-bottom: 2px white solid;
+}
+
+
+    /* css on name */
+#about {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    overflow: visible;
+    min-height: 70vh;
+}
+#name {
+    margin: 0px;
+    text-align: center;
+    position: relative;
+}
+#name p {
+    margin: 0px;
+    font-size: 2.5rem;
+    /* font-weight: 600; */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #00a6ff;
+}
+
+#about>p {
+    margin: 50px 0px;
+    /* text-align: center; */
+    font-family: cursive;
+    font-size: 1.2rem;
+    color: #008955;
+    text-align: center;
+}
+    
+    /* dealing with social icons */
+#social-icons {
+    text-align: center;
+    position: relative;
+    width: 60%;
+    max-width: 300px;
+}
+#social-icons ul{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#social-icons li {
+    
+    list-style: none;
+}
+#social-icons li:hover {
+    box-shadow: 0px 0px 10px 2px #FF00E9;
+    border-radius: 50%;
+    color: #FF00E9;
+}
+#social-icons i{
+    color: #8A1E00;
+    font-size: 1.5rem;
+}
+#social-icons i:hover {
+    color: pink;
+}
+
+    /* dealing with main */
+
+    
+    /* adding background color to all section*/
+section:nth-child(2n+1) {
+    background-color: white;
+}
+section:nth-child(2n) {
+    background-color: azure;
+}
+
+    /* making all section as a flex box */
+section {
+    width: 100vw;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+section h1 {
+    color: #8A1E00;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+    /* dealing with about */
+#rotate {
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+}
+#rotate::before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    background: conic-gradient(transparent,transparent,transparent,#00C9A7);
+    animation: rotation 4s linear  infinite  ;
+}
+#rotate::after {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    background: conic-gradient(transparent,transparent,transparent, #FF6F91);
+    animation: rotation 4s linear -2s infinite ;
+    z-index: 1;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#myImage {
+    position: absolute;
+    inset: 0.3rem;
+    z-index: 2;
+    /* border-radius: 50%; */
+    /* outline: 2px blue solid; */
+    background-image: url('./image/DSC_6261.jpg');
+    background-position: center;
+    background-size: contain;
+}
+/* #myImage img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+} */
+
+
+
+
+    /* dealing with skills */
+
+#skill-container {
+    width: 60%;
+    height: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+
+.individual-skill {
+    position: relative;
+    width: 120px;
+    height: 30px;
+    margin: 30px 20px;
+    background-color:rgb(184, 215, 232);
+    border-radius: 15px;
+}
+.individual-skill div {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    /* animation: skill 2s ease-in-out  2 forwards ; */
+}
+
+.individual-skill div span {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: white;
+    margin-left: 10px;
+}
+
+.individual-skill #cpp {
+    background-color: red;
+    width: 80%;
+}
+.individual-skill #data_structure {
+    background-color: green;
+    width: 50%;
+}
+.individual-skill #algorithms {
+    background-color: blue;
+    width: 55%;
+}
+.individual-skill #html {
+    background-color: orange;
+    width: 70%;
+}
+.individual-skill #css {
+    background-color: purple;
+    width: 65%;
+}
+.individual-skill #javascript {
+    background-color: darkgoldenrod;
+    width: 30%;
+}
+.individual-skill #mern {
+    background-color: violet;
+    width: 20%;
+}
+.individual-skill #oops {
+    background-color: indigo;
+    width: 40%;
+}
+
+
+
+
+    /* dealing with experience */ 
+#experience-main {
+    position: relative;
+    width: 75%;
+    /* height: 100vh; */
+    /* border: 2px solid red; */
+    margin-top: 7%;
+   margin-bottom: 10%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+}
+.timeline {
+    width: 30%;
+    height: 200px;
+    /* margin: 3px; */
+    position: relative;
+    left: 5%;
+    /* border: 2px solid black; */
+}
+.timeline:nth-child(2n+1)::after {
+    content: '';
+    /* display: inline-block; */
+    background: burlywood;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 36%;
+    right: -50%;
+    z-index: 1;
+    /* right: -50%; */
+}
+.timeline:nth-child(2n)::after {
+    content: '';
+    /* display: inline-block; */
+    background: burlywood;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 33%;
+    left: -18%;
+    z-index: 1;
+    /* left: -19%; */
+}
+
+.timeline:nth-child(2n) {
+    position: relative;
+    left: 54%;
+}
+.timeline .head {
+    text-align: end;
+    position: absolute;
+    margin-bottom: 5%;
+    right: 3%;
+    width: 70%;
+    /* left: 27%; */
+    /* display: inline-block; */
+}
+.timeline .content {
+    position: absolute;
+    /* bottom: 5%; */
+    top: 50%;
+    left: 10%;
+    /* margin: 5%; */
+}
+
+.timeline .head * {
+    margin: 1%;
+}
+.timeline #cn-logo {
+    /* display: inline-block; */
+    height: 40px;
+    width: 40px;
+    /* border: 2px black solid; */
+    border-radius: 50%;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    /* top: -60px; */
+    background-image: url('./image/cnLogo.png');
+    background-size: contain;
+    background-position: center;
+}
+.timeline #cbscLogo {
+    height: 40px;
+    width: 40px;
+    /* border: 2px black solid; */
+    border-radius: 50%;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    /* top: -60px; */
+    background-image: url('./image/cbscLogo.jpg');
+    background-size: contain;
+    background-position: center;
+}
+.timeline #empty {
+    height: 40px;
+    width: 40px;
+    /* border: 2px black solid; */
+    border-radius: 50%;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    /* top: -60px; */
+    background: goldenrod;
+    background-size: contain;
+    background-position: center;
+}
+.timeline-divider {
+    position: absolute;
+    height: 75%;
+    width: 1%;
+    left: 50%;
+    top: 12%;
+    border-left: 2px dashed cadetblue;
+    margin-left: -8.5px;
+    border-width: 3px;
+    /* top: 10%; */
+}
+
+.timeline h3 {
+    color: #8685EF;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.timeline h5 {
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #628281;
+}
+.timeline span,.timeline .content {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(152, 142, 142);
+}
+.timeline p{
+    color: #628281;
+}
+.plane {
+    width: fit-content;
+    position: sticky;
+    top: 30%;
+    margin-left: -25px;
+    text-align: center;
+    z-index: 2;
+}
+.plane i {
+    font-size: 250%;
+    text-align: center;
+    color: #009063;
+}
+
+
+
+    /* dealing with education section */
+.timeline #mdjLogo {
+    /* display: inline-block; */
+    height: 40px;
+    width: 40px;
+    /* border: 2px black solid; */
+    border-radius: 50%;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    /* top: -60px; */
+    background-image: url('./image/mdjLogo.png');
+    background-size: contain;
+    background-position: center;
+}
+.timeline #maharajaLogo {
+    /* display: inline-block; */
+    height: 40px;
+    width: 40px;
+    /* border: 2px black solid; */
+    border-radius: 50%;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    /* top: -60px; */
+    background-image: url('./image/maharajaLogo.jpg');
+    background-size: contain;
+    background-position: center;
+
+}
+
+.timeline #ism {
+    /* display: inline-block; */
+    height: 40px;
+    width: 40px;
+    /* border: 2px black solid; */
+    border-radius: 50%;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    /* top: -60px; */
+    background-image: url('./image/ismLogo.png');
+    background-size: contain;
+    background-position: center;
+}
+
+
+
+    /* dealing with contact section */
+#contact {
+    background-image: repeating-linear-gradient(30deg,#E3E0F3 ,#AFFEFF 4px);
+}
+
+footer {
+    width: 80%;
+    text-align: center;
+    /* margin-top: 50px; */
+}
+#footer-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+#footer-icons li{
+    display: inline-block;
+    list-style: none;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+#footer-icons li:hover {
+    box-shadow: 0px 0px 10px 2px blue;
+    border-radius: 50%;
+}
+
+#footer-icons #top i {
+    color: darkorange;
+    font-size: 40px;
+}
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contact-main {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+#contact-main #contact-form {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: relative;
+    /* top: 40px; */
+    width: 400px;
+    height: 400px;
+}
+#contact-main form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+#contact-main form div {
+    flex-wrap: wrap;
+    width: 250px;
+    overflow: hidden;
+    /* border: 2px solid black; */
+}
+@media (max-width:600px) {
+    #contact-form {
+        width: 80vw;
+        height: 500px !important;
+    }
+
+}
+
+#visits {
+    position: relative;
+    background-color: #00a6ff;
+    height: 150px;
+    width: 220px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease-in;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+}
+#visits div {
+    background-color: #00a6ff;
+    width: 150px;
+}
+#visits:hover {
+    box-shadow: 0px 0px 10px 2px red;
+    font-weight: 600;
+}
+#contact-main #address {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* top: -20px; */
+}
+/* #contact-main #address div{
+    margin-left: 25%;
+} */
+#address i {
+    color: #1B4149;
+    font-size: 1.5rem;
+}
+#address {
+    display: flex;
+    align-items: center;
+    /* margin-top: -5%; */
+}
+#address p {
+    /* margin: 10% 0px; */
+    color: #AD8A73;
+    font-family: cursive;
+}
+#address h2 {
+    color: #1B4149;
+    position: relative;
+    /* top: -15px; */
+    font-family:sans-serif;
+}
+#contact-main input {
+    border: none;
+    background: none;
+    width: 100%;
+    height: 2rem;
+    border-bottom: #00ABE0 2px solid;
+    font-size: large;
+    color: #354B45;
+}
+#contact-form #button {
+    position: relative;
+    height: 40px;
+    text-align: center;
+    /* margin-bottom: 2rem; */
+    /* top: -1rem; */
+}
+#contact-form #button button {
+    position: relative;
+    height: 100%;
+    /* width: 50%; */
+    background: none;
+    font-weight: 600;
+    color: #00ABE0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 2px solid #00ABE0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all ease-in-out 0.3s;
+}
+
+#contact-form #button button:hover {
+    box-shadow: 0px 0px 10px 2px #ed05e5;
+    border: 0px;
+    color: #dd5bd9;
+    letter-spacing: 2px;
+}
+#contact-form textarea {
+    font-style: italic;
+    background: none;
+    border: #00ABE0 2px solid;
+}
+
+    /* making our site responsive */
+@media (max-width: 800px) {
+    html {
+        font-size: 13px;
+    }
+    #experience-main {
+        align-items: end;
+    }
+    .timeline-divider {
+        left: 10%;
+        top: 12%;
+        border-left: 2px dashed cadetblue;
+        margin-left: -8.5px;
+        border-width: 3px;
+        /* top: 10%; */
+    }
+    .timeline:nth-child(2n+1)::after {
+        top: 36%;
+        left: -53%;
+        
+    }
+    .timeline:nth-child(2n)::after {
+        
+        top: 33%;
+        left: -53%;
+        
+    }
+    .timeline:nth-child(2n) {
+        left: 5%;
+    }
+    .timeline {
+        width: 65%;
+        min-width: 180px;
+        position: relative;
+        left: 5%;
+        margin-bottom: 8%;
+        /* border: 2px solid black; */
+    }
+    
+}
+
