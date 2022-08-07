@@ -28,3 +28,21 @@ document.body.addEventListener('click',function() {
         displayed=false;
     }
 });
+
+var navAnchorTags = document.querySelectorAll('#nav a');
+console.log(navAnchorTags);
+for(let i=0;i<navAnchorTags.length;i++) {
+    navAnchorTags[i].addEventListener('click',function(event){
+        event.preventDefault();
+        var sectionToScroll = this.getAttribute('href');
+        var scrolling = setInterval(function(){
+            var cordinates = document.querySelector(sectionToScroll).getBoundingClientRect();
+            if(cordinates.y<=0) {
+                clearInterval(scrolling);
+                return;
+            }
+            // window.scroll()
+            window.scrollBy(0,40);
+        },20);
+    });
+}
